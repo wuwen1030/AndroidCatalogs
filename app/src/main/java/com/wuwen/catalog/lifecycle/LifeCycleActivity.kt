@@ -8,12 +8,16 @@ import com.wuwen.catalog.R
 import java.text.SimpleDateFormat
 import java.util.*
 
-class MainActivity : AppCompatActivity() {
+class LifeCycleActivity : AppCompatActivity() {
     private lateinit var textView: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_life_cycle_main)
         textView = findViewById(R.id.textView)
+        savedInstanceState?.let {
+            textView.text = it.getString(STATE_TEXT)
+        }
+
         updateLog("onCreate")
     }
 
@@ -58,7 +62,14 @@ class MainActivity : AppCompatActivity() {
         updateLog("onDestroy")
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        updateLog("onSaveInstanceState")
+        outState.putString(STATE_TEXT, textView.text.toString())
+        super.onSaveInstanceState(outState)
+    }
+
     companion object {
+        const val STATE_TEXT = "StateText"
         const val TAG = "LifeCycle"
     }
 }

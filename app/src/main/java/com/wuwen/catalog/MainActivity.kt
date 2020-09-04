@@ -34,12 +34,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initDataSet() {
-        val lifeCycle = CatalogItem(
+        val lifeCycleItem = CatalogItem(
             title = "Lift Cycle",
             subtitle = "Show activity life cycle",
-            destination = "com.wuwen.catalog.lifecycle.MainActivity"
+            destination = "com.wuwen.catalog.lifecycle.LifeCycleActivity"
         )
-        dataSet = arrayOf(lifeCycle)
+        val viewModelItem = CatalogItem(
+            title = "View Model",
+            subtitle = "A simple view model demo",
+            destination = "com.wuwen.catalog.viewmodel.ViewModelActivity"
+        )
+        dataSet = arrayOf(lifeCycleItem, viewModelItem)
     }
 
     companion object {
