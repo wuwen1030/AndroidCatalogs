@@ -5,10 +5,11 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
 import com.wuwen.catalog.R
+import com.wuwen.catalog.WithBackActivity
 import java.text.SimpleDateFormat
 import java.util.*
 
-class LifeCycleActivity : AppCompatActivity() {
+class LifeCycleActivity : WithBackActivity() {
     private lateinit var textView: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
