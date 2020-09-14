@@ -44,7 +44,12 @@ class MainActivity : AppCompatActivity() {
             subtitle = "A simple view model demo",
             destination = "com.wuwen.catalog.viewmodel.ViewModelActivity"
         )
-        dataSet = arrayOf(lifeCycleItem, viewModelItem)
+        val fragmentItem = CatalogItem(
+            title = "Fragment",
+            subtitle = "Fragment demos",
+            destination = "com.wuwen.catalog.frag.FragMainActivity"
+        )
+        dataSet = arrayOf(lifeCycleItem, viewModelItem, fragmentItem)
     }
 
     companion object {

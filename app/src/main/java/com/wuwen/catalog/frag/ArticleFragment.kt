@@ -1,0 +1,43 @@
+package com.wuwen.catalog.frag
+
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
+import com.wuwen.catalog.R
+import com.wuwen.catalog.databinding.FragmentArticleBinding
+
+/**
+ * A simple [Fragment] subclass.
+ * Use the [ArticleFragment.newInstance] factory method to
+ * create an instance of this fragment.
+ */
+class ArticleFragment : Fragment() {
+    private lateinit var article: Article
+    private lateinit var articleBinding: FragmentArticleBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        articleBinding = FragmentArticleBinding.inflate(inflater, container, false)
+        articleBinding.article = article
+        return articleBinding.root
+    }
+
+
+    companion object {
+        @JvmStatic
+        fun newInstance(article: Article) =
+            ArticleFragment().apply {
+                this.article = article
+            }
+    }
+}
