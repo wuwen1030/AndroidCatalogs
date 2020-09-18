@@ -9,13 +9,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.wuwen.catalog.databinding.HeadlineItemBinding
 import com.wuwen.catalog.R
 
-class HeadlinesAdapter(private val onClickListener: (Int, Article) -> Unit): ListAdapter<Article, HeadlinesAdapter.ViewHolder>(
+class HeadlinesAdapter(private val onClickListener: (Article) -> Unit): ListAdapter<Article, HeadlinesAdapter.ViewHolder>(
     ArticleDiffCallback()
 ) {
     class ViewHolder(
-        private val binding: HeadlineItemBinding
+        val binding: HeadlineItemBinding
     ) : RecyclerView.ViewHolder(binding.root) {
-
         fun bind(article: Article) {
             binding.article = article
             binding.executePendingBindings()
@@ -23,7 +22,7 @@ class HeadlinesAdapter(private val onClickListener: (Int, Article) -> Unit): Lis
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(
+        val viewHolder = ViewHolder(
             DataBindingUtil.inflate(
                 LayoutInflater.from(parent.context),
                 R.layout.headline_item,
@@ -31,13 +30,16 @@ class HeadlinesAdapter(private val onClickListener: (Int, Article) -> Unit): Lis
                 false
             )
         )
+        viewHolder.binding.root.setOnClickListener {
+            viewHolder.binding.article?.let {
+                onClickListener(it)
+            }
+        }
+        return viewHolder
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(getItem(position))
-        holder.itemView.setOnClickListener {
-            onClickListener(position, getItem(position))
-        }
     }
 }
 

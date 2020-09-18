@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class CatalogAdapter(private val dataSet: Array<CatalogItem>, private val onItemClick: (position: Int, item: CatalogItem) -> Unit) : RecyclerView.Adapter<CatalogAdapter.ViewHolder>() {
+class CatalogAdapter(private val dataSet: Array<CatalogItem>, private val onItemClick: (Int, CatalogItem) -> Unit) : RecyclerView.Adapter<CatalogAdapter.ViewHolder>() {
     class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
         val titleView: TextView = v.findViewById(R.id.catalogItemTitle)
         val subtitleView: TextView = v.findViewById(R.id.catalogItemSubtitle)

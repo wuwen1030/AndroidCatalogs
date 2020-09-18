@@ -25,8 +25,8 @@ class HeadlinesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         fragmentBinding = HeadlinesFragmentBinding.inflate(inflater, container, false)
-        val adapter = HeadlinesAdapter { position, article ->
-            onItemClick(position, article)
+        val adapter = HeadlinesAdapter {article ->
+            onItemClick(article)
         }
         fragmentBinding.headlineList.adapter = adapter
         viewModel = ViewModelProviders.of(this).get(HeadlinesViewModel::class.java)
@@ -36,7 +36,7 @@ class HeadlinesFragment : Fragment() {
         return fragmentBinding.root
     }
 
-    private fun onItemClick(position: Int, article: Article) {
+    private fun onItemClick(article: Article) {
         val articleFragment = ArticleFragment.newInstance(article)
         requireActivity().supportFragmentManager.beginTransaction().apply {
             replace(R.id.fragment_container, articleFragment)
