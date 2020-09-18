@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
     <data>
-        <import type="com.wuwen.catalog.frag.Article" />
+        <import type="com.wuwen.catalog.data.Article" />
         <variable
             name="article"
-            type="Article" />
+            type="com.wuwen.catalog.data.Article" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -1,11 +1,9 @@
-package com.wuwen.catalog.lifecycle
+package com.wuwen.catalog
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
-import com.wuwen.catalog.R
-import com.wuwen.catalog.WithBackActivity
+import com.wuwen.catalog.utilities.WithBackActivity
 import java.text.SimpleDateFormat
 import java.util.*
 

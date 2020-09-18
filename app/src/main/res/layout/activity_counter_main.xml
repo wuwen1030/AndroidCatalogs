@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".viewmodel.ViewModelActivity">
+    tools:context=".CounterActivity">
 
     <fragment
-        android:name="com.wuwen.catalog.viewmodel.MainFragment"
+        android:name="com.wuwen.catalog.ui.CounterFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"

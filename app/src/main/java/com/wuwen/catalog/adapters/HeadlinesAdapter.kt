@@ -1,4 +1,4 @@
-package com.wuwen.catalog.frag
+package com.wuwen.catalog.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,14 +6,15 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.wuwen.catalog.databinding.HeadlineItemBinding
 import com.wuwen.catalog.R
+import com.wuwen.catalog.data.Article
+import com.wuwen.catalog.databinding.ListItemHeadlineBinding
 
 class HeadlinesAdapter(private val onClickListener: (Article) -> Unit): ListAdapter<Article, HeadlinesAdapter.ViewHolder>(
     ArticleDiffCallback()
 ) {
     class ViewHolder(
-        val binding: HeadlineItemBinding
+        val binding: ListItemHeadlineBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(article: Article) {
             binding.article = article
@@ -25,7 +26,7 @@ class HeadlinesAdapter(private val onClickListener: (Article) -> Unit): ListAdap
         val viewHolder = ViewHolder(
             DataBindingUtil.inflate(
                 LayoutInflater.from(parent.context),
-                R.layout.headline_item,
+                R.layout.list_item_headline,
                 parent,
                 false
             )

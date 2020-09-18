@@ -1,15 +1,14 @@
-package com.wuwen.catalog.frag
+package com.wuwen.catalog
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.FrameLayout
 import com.wuwen.catalog.R
-import com.wuwen.catalog.WithBackActivity
+import com.wuwen.catalog.ui.HeadlinesFragment
+import com.wuwen.catalog.utilities.WithBackActivity
 
-class FragMainActivity : WithBackActivity() {
+class ArticleActivity : WithBackActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_frag_main)
+        setContentView(R.layout.activity_article_main)
         actionBar?.title = "Fragment Sample"
         if (savedInstanceState == null) {
             val headlinesFragment = HeadlinesFragment.newInstance()

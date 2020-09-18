@@ -1,4 +1,4 @@
-package com.wuwen.catalog.viewmodel
+package com.wuwen.catalog.ui
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -10,21 +10,22 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.lifecycle.Observer
 import com.wuwen.catalog.R
+import com.wuwen.catalog.viewmodels.CounterViewModel
 
-class MainFragment : Fragment() {
+class CounterFragment : Fragment() {
 
     companion object {
-        fun newInstance() = MainFragment()
+        fun newInstance() = CounterFragment()
     }
 
-    private lateinit var viewModel: MainViewModel
+    private lateinit var viewModel: CounterViewModel
     private lateinit var counterTextView: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.main_fragment, container, false)
+        return inflater.inflate(R.layout.fragment_counter, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -39,7 +40,7 @@ class MainFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(CounterViewModel::class.java)
         viewModel.hitCount.observe(this, Observer<Int> {
             counterTextView.text = "hit: $it"
         })

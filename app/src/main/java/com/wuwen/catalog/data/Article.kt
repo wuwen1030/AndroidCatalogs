@@ -1,4 +1,4 @@
-package com.wuwen.catalog.frag
+package com.wuwen.catalog.data
 
 data class Article(
     val title: String,

@@ -1,8 +1,9 @@
-package com.wuwen.catalog.frag
+package com.wuwen.catalog.viewmodels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.wuwen.catalog.data.Article
 
 class HeadlinesViewModel : ViewModel() {
     val articles: LiveData<List<Article>> by lazy {

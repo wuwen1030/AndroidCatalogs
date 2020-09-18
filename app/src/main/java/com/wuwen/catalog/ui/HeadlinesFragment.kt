@@ -1,4 +1,4 @@
-package com.wuwen.catalog.frag
+package com.wuwen.catalog.ui
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -6,14 +6,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.wuwen.catalog.R
-import com.wuwen.catalog.databinding.HeadlinesFragmentBinding
+import com.wuwen.catalog.adapters.HeadlinesAdapter
+import com.wuwen.catalog.data.Article
+import com.wuwen.catalog.databinding.FragmentHeadlinesBinding
+import com.wuwen.catalog.viewmodels.HeadlinesViewModel
 
 class HeadlinesFragment : Fragment() {
 
-    private lateinit var fragmentBinding: HeadlinesFragmentBinding
+    private lateinit var fragmentBinding: FragmentHeadlinesBinding
     companion object {
         fun newInstance() = HeadlinesFragment()
     }
@@ -24,7 +25,7 @@ class HeadlinesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        fragmentBinding = HeadlinesFragmentBinding.inflate(inflater, container, false)
+        fragmentBinding = FragmentHeadlinesBinding.inflate(inflater, container, false)
         val adapter = HeadlinesAdapter {article ->
             onItemClick(article)
         }

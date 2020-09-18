@@ -6,9 +6,11 @@ import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.wuwen.catalog.adapters.CatalogAdapter
+import com.wuwen.catalog.data.CatalogItem
 import java.lang.Exception
 
-class MainActivity : AppCompatActivity() {
+class CatalogActivity : AppCompatActivity() {
     private lateinit var dataSet: Array<CatalogItem>
     private lateinit var recyclerView: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         val lifeCycleItem = CatalogItem(
             title = "Lift Cycle",
             subtitle = "Show activity life cycle",
-            destination = "com.wuwen.catalog.lifecycle.LifeCycleActivity"
+            destination = "com.wuwen.catalog.LifeCycleActivity"
         )
         val viewModelItem = CatalogItem(
             title = "View Model",
@@ -47,7 +49,7 @@ class MainActivity : AppCompatActivity() {
         val fragmentItem = CatalogItem(
             title = "Fragment",
             subtitle = "Fragment demos",
-            destination = "com.wuwen.catalog.frag.FragMainActivity"
+            destination = "com.wuwen.catalog.FragMainActivity"
         )
         dataSet = arrayOf(lifeCycleItem, viewModelItem, fragmentItem)
     }

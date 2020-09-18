@@ -1,10 +1,12 @@
-package com.wuwen.catalog
+package com.wuwen.catalog.adapters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.wuwen.catalog.data.CatalogItem
+import com.wuwen.catalog.R
 
 class CatalogAdapter(private val dataSet: Array<CatalogItem>, private val onItemClick: (Int, CatalogItem) -> Unit) : RecyclerView.Adapter<CatalogAdapter.ViewHolder>() {
     class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
@@ -14,7 +16,7 @@ class CatalogAdapter(private val dataSet: Array<CatalogItem>, private val onItem
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context)
-            .inflate(R.layout.catalog_row, parent,false)
+            .inflate(R.layout.list_item_catalog, parent,false)
         return ViewHolder(v)
     }
 

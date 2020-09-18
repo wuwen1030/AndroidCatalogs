@@ -1,4 +1,4 @@
-package com.wuwen.catalog
+package com.wuwen.catalog.data
 
 interface ICatalogItem {
     val title: String

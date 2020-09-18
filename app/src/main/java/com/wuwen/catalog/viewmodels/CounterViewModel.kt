@@ -1,9 +1,9 @@
-package com.wuwen.catalog.viewmodel
+package com.wuwen.catalog.viewmodels
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class MainViewModel : ViewModel() {
+class CounterViewModel : ViewModel() {
     val hitCount: MutableLiveData<Int> by lazy {
         MutableLiveData<Int>(0)
     }

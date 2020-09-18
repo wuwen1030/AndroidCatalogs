@@ -1,4 +1,4 @@
-package com.wuwen.catalog
+package com.wuwen.catalog.utilities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

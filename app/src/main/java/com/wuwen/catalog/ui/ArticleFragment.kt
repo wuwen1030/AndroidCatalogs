@@ -1,12 +1,11 @@
-package com.wuwen.catalog.frag
+package com.wuwen.catalog.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import com.wuwen.catalog.R
+import com.wuwen.catalog.data.Article
 import com.wuwen.catalog.databinding.FragmentArticleBinding
 
 /**
