@@ -44,12 +44,12 @@ class CatalogActivity : AppCompatActivity() {
         val viewModelItem = CatalogItem(
             title = "View Model",
             subtitle = "A simple view model demo",
-            destination = "com.wuwen.catalog.viewmodel.ViewModelActivity"
+            destination = "com.wuwen.catalog.CounterActivity"
         )
         val fragmentItem = CatalogItem(
             title = "Fragment",
             subtitle = "Fragment demos",
-            destination = "com.wuwen.catalog.FragMainActivity"
+            destination = "com.wuwen.catalog.ArticleActivity"
         )
         dataSet = arrayOf(lifeCycleItem, viewModelItem, fragmentItem)
     }

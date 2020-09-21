@@ -18,7 +18,7 @@ class LifeCycleActivity : WithBackActivity() {
         }
 
         updateLog("onCreate")
-        actionBar?.title = "Life cycle Sample"
+        supportActionBar?.title = "Life cycle Sample"
     }
 
     private fun updateLog(logString: String) {
