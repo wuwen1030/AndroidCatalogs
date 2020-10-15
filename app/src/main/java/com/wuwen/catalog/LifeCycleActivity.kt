@@ -22,7 +22,7 @@ class LifeCycleActivity : WithBackActivity() {
     }
 
     private fun updateLog(logString: String) {
-        val dateString:CharSequence = SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(Date())
+        val dateString:CharSequence = SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.CHINA).format(Date())
         textView.text = "${textView.text}\n$dateString: $logString"
     }
 
