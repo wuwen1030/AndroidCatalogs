@@ -8,11 +8,6 @@ import android.view.ViewGroup
 import com.wuwen.catalog.data.Article
 import com.wuwen.catalog.databinding.FragmentArticleBinding
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ArticleFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ArticleFragment : Fragment() {
     private lateinit var article: Article
     private lateinit var articleBinding: FragmentArticleBinding
